@@ -30,3 +30,5 @@ def on_html_collect_pages(app):
 def setup(app):
     app.add_config_value('rawfiles', [], 'html')
     app.connect("html-collect-pages", on_html_collect_pages)
+    return {"parallel_read_safe": True,
+            "parallel_write_safe": True}
